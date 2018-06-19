@@ -1,0 +1,76 @@
+{
+ 	"store" : {
+ 		"config": "single/dual/y", # Single, Dual or Y-lane
+ 		"car_freq" : <num>, # Number of cars per hour 
+ 		"random" " <y/n>, # Randomly generating cars based on frequency
+ 		"pullouts" : <num>, # Percentage of cars that will be marked as pullouts
+ 		"pullins" : <num> # Percentage of cars that will be marked as pullins 
+ 	}
+ 	"detector" : [
+ 		# Detector ID, Enabled or not, How long a car waits here, Deviation from wait time
+ 		{"enabled":<y/n>, "wait_time":"<mm:ss>", "wait_dev":"<mm:ss>"}, # Detector #1
+ 		{"enabled":<y/n>, "wait_time":"<mm:ss>", "wait_dev":"<mm:ss>"}, # Detector #2
+ 		{"enabled":<y/n>, "wait_time":"<mm:ss>", "wait_dev":"<mm:ss>"}, # Detector #3
+ 		{"enabled":<y/n>, "wait_time":"<mm:ss>", "wait_dev":"<mm:ss>"}, # Detector #4
+ 		{"enabled":<y/n>, "wait_time":"<mm:ss>", "wait_dev":"<mm:ss>"}, # Detector #5
+ 		{"enabled":<y/n>, "wait_time":"<mm:ss>", "wait_dev":"<mm:ss>"}, # Detector #6
+ 		{"enabled":<y/n>, "wait_time":"<mm:ss>", "wait_dev":"<mm:ss>"}, # Detector #7
+ 		{"enabled":<y/n>, "wait_time":"<mm:ss>", "wait_dev":"<mm:ss>"} # Detector #8
+ 	]
+
+ 	"store_hour" : [
+ 		# Day of week, Open or not, Opening time, Closing time
+ 		{"day": "Sun", "open":<y/n>, "open_time":"<hh:mm>", "close_time":"<hh:mm>"},
+ 		{"day": "Mon", "open":<y/n>, "open_time":"<hh:mm>", "close_time":"<hh:mm>"},
+ 		{"day": "Tue", "open":<y/n>, "open_time":"<hh:mm>", "close_time":"<hh:mm>"},
+ 		{"day": "Wed", "open":<y/n>, "open_time":"<hh:mm>", "close_time":"<hh:mm>"},
+ 		{"day": "Thu", "open":<y/n>, "open_time":"<hh:mm>", "close_time":"<hh:mm>"},
+ 		{"day": "Fri", "open":<y/n>, "open_time":"<hh:mm>", "close_time":"<hh:mm>"},
+ 		{"day": "Sat", "open":<y/n>, "open_time":"<hh:mm>", "close_time":"<hh:mm>"}
+ 	]
+
+ 	"peak_hour" : [
+ 		# You can have as many peak hour definitions as you want
+ 		# Start time, End time, Percentage of increase from car_freq, Enabled for weekend, Enabled for weekend
+ 		{"start": <hh:mm>, "end":<hh:mm>, "percent_inc":<num>, "wkday": <y/n>, "wkend": <y/n>},
+		 {"start": <hh:mm>, "end":<hh:mm>, "percent_inc":<num>, "wkday": <y/n>, "wkend": <y/n>},
+ 		.
+		.
+ 		.
+ 	]
+}
+
+
+
+{
+	"store" : {
+ 		"config": "single", 
+ 		"car_freq" : 50,
+ 		"random" : "y",
+ 		"pullouts" : 5, 
+ 		"pullins" : 2
+ 	},
+ 	"detectors" : [
+ 		{"enabled":"y", "wait_time": "1:30", "wait_dev":"0:10"},
+ 		{"enabled":"y", "wait_time": "1:35", "wait_dev":"0:20"},
+ 		{"enabled":"y", "wait_time": "0:40", "wait_dev":"0:05"},
+ 		{"enabled":"y", "wait_time": "0:35", "wait_dev":"0:05"},
+ 		{"enabled":"y", "wait_time": "0:35", "wait_dev":"0:05"},
+ 		{"enabled":"y", "wait_time": "0:35", "wait_dev":"0:05"},
+ 		{"enabled":"y", "wait_time": "0:40", "wait_dev":"0:07"},
+ 		{"enabled":"y", "wait_time": "1:00", "wait_dev":"0:10"}
+ 	],
+ 	"store_hours" : [
+ 		{"day": "Sun", "open":"y", "open_time":"6:00", "close_time":"22:00"},
+ 		{"day": "Mon", "open":"y", "open_time":"5:00", "close_time":"23:00"},
+ 		{"day": "Tue", "open":"y", "open_time":"5:00", "close_time":"23:00"},
+ 		{"day": "Wed", "open":"y", "open_time":"5:00", "close_time":"23:00"},
+ 		{"day": "Thu", "open":"y", "open_time":"5:00", "close_time":"23:00"},
+ 		{"day": "Fri", "open":"y", "open_time":"5:00", "close_time":"23:00"},
+ 		{"day": "Sat", "open":"y", "open_time":"6:00", "close_time":"22:00"}
+ 	],
+ 	"peak_hours" : [
+ 		{"start": "7:00", "end":"8:45", "percent_inc":20, "wkday": "y", "wkend": "n"},
+ 		{"start": "11:30", "end":"13:00", "percent_inc":35, "wkday": "y", "wkend": "y"}
+ 	]
+}
