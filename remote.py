@@ -105,6 +105,7 @@ class Model:
                 q.count_down() #wait time count down for each first car in each queue
                 q.wait_time_count()
 
+
     def minToSeconds(time):#input is a time string such as 06:00 means 6 minutes
         arr = list(map(int, time.split(':')))
         seconds = 0
@@ -127,6 +128,7 @@ class Model:
         
         print ('================================================')
 
+
     def getbits(self):
         bits = [0]*8
         for i, arr in enumerate(self.queues):
@@ -137,10 +139,13 @@ class Model:
                     
         return bits[::-1]
 
+
     def getint(self): #convert LED binary flags to an int
         s = ''.join(list(map(str, self.outBits)))
         s = '0b' + s
         return int(s, 2)
+
+
 
     def update(self, report_status = False):
         self.outBits = self.getbits()
@@ -156,26 +161,21 @@ class Model:
             for key, value in sorted(self.record.items()):
                writer.writerow([key, value])
 
+
     def readCSV(self, filename = 'timeline.csv'):
         with open(filename, 'r') as csv_file:
             reader = csv.reader(csv_file)
             self.record = dict(reader)
+
 
     def sendCMD(self, ip, n):
         return requests.get('http://'+ip+':5000/post?n='+str(n)).text
         
         
         
-
-
-st = "06:00"
-et = "22:00" #"22:00"
-                 
-
 class Scheduler:
 
-
-    def __init__(self, carPerHr = 50, start_time = "06:00", end_time = "06:05"): #st is the store day starting time, et is the day ending time
+    def __init__(self, carPerHr = 50, start_time = "06:00", end_time = "22:00"): #st is the store day starting time, et is the day ending time
         
         self.carPerHr = carPerHr
         self.totalCars = 0
@@ -246,7 +246,7 @@ class Scheduler:
 
 
 
-    def remoteSimulate(self, model, ip, speedup = 1, realtime = False, display = False, record = False):
+    def remoteSimulate(self, model, ip, speedup = 1, realtime = False, display = False):
         tic = 0
         toc = self.sim_t
         print ('total simulation time is ' + str(self.sim_t) + ' seconds')
@@ -294,7 +294,7 @@ def main():
     #print (m1.architect)
     scheduler = Scheduler(500, "06:00", "07:00")
     #CTL = TSP_CTL()
-    #scheduler.simulate(model, CTL, speedup = 1, realtime = True, display = True, record = True)
+    #scheduler.simulate(model, CTL, speedup = 1, realtime = True, display = True)
     scheduler.remoteSimulate(model, ip, speedup = 1, realtime = True, display = True, record = True)
     #model.writeCSV()
     

@@ -65,8 +65,8 @@ class TSP_CTL:
         
 def main():
     ctl_model = TSP_CTL()
-    ctl_model.update(9)
-    ctl_model.GREET_ON('A')
+    #ctl_model.update(9)
+    #ctl_model.GREET_ON('A')
     
 
 # test
