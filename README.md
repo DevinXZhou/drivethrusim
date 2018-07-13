@@ -1,4 +1,4 @@
-#Drive Through Detector Signals Simulator
+## Drive Through Detector Signals Simulator
 
 To execute this program
 Either run run.sh in terminal or run 'python3 simulate.py 2 1 1' in terminal
@@ -23,7 +23,7 @@ Optional arguments parameters:
 All data sare saved in /data folder with a time stamp in its filename
 
 
-# How to use?
+## How to use?
 
 python3 simulate.py 2 1 1	# means Y lane, 2 menu windows, 1 casher, 1 present
 python3 simulate.py 2 1 1 --spd=0	#only generate a record of TSP LED signals
