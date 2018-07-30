@@ -1,0 +1,32 @@
+{
+	"store" : {
+ 		"config": "y", 
+ 		"car_freq" : 50,
+ 		"random" : "n",
+ 		"pullouts" : 5, 
+ 		"pullins" : 2
+ 	},
+ 	"detectors" : [
+ 		{"LED": "2",  "wait_avg": "0:30", "wait_dev":"0:10", "qsize":4, "name":"Order 1"},
+		{"LED": "A",  "wait_avg": "0:20", "wait_dev":"0:10", "qsize":0, "name":"Greet 1"},
+ 		{"LED": "3" , "wait_avg": "0:30", "wait_dev":"0:10", "qsize":4, "name":"Order 2"},
+		{"LED": "B",  "wait_avg": "0:20", "wait_dev":"0:10", "qsize":0, "name":"Greet 2"},
+ 		{"LED": "4" , "wait_avg": "0:30", "wait_dev":"0:05", "qsize":2, "name":"Cashier"},
+ 		{"LED": "5" , "wait_avg": "0:30", "wait_dev":"0:05", "qsize":0, "name":"Present"},		
+ 		{"LED": null, "wait_avg":   null, "wait_dev":  null, "qsize":0, "name": null},
+ 		{"LED": null, "wait_avg":   null, "wait_dev":  null, "qsize":0, "name": null}
+ 	],
+ 	"store_hours" : [
+ 		{"day": "Sun", "open":"y", "open_time":"6:00", "close_time":"22:00"},
+ 		{"day": "Mon", "open":"y", "open_time":"5:00", "close_time":"23:00"},
+ 		{"day": "Tue", "open":"y", "open_time":"5:00", "close_time":"23:00"},
+ 		{"day": "Wed", "open":"y", "open_time":"5:00", "close_time":"23:00"},
+ 		{"day": "Thu", "open":"y", "open_time":"5:00", "close_time":"23:00"},
+ 		{"day": "Fri", "open":"y", "open_time":"5:00", "close_time":"23:00"},
+ 		{"day": "Sat", "open":"y", "open_time":"6:00", "close_time":"22:00"}
+ 	],
+ 	"peak_hours" : [
+ 		{"start": "7:00", "end":"8:45", "percent_inc":20, "wkday": "y", "wkend": "n"},
+ 		{"start": "11:30", "end":"13:00", "percent_inc":35, "wkday": "y", "wkend": "y"}
+ 	]
+}
