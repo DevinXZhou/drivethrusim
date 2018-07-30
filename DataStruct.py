@@ -84,7 +84,7 @@ class Queue:
                     else:
                         self.head.timer = self.wait_avg
                 else:
-                    self.head.timer = 5 # five seconds delay
+                    self.head.timer = 2 # five seconds delay
             else:
                 self.tail = None
 
@@ -105,7 +105,7 @@ class Queue:
                     else:
                         self.head.timer = self.wait_avg
                 else:
-                    self.head.timer = 5
+                    self.head.timer = 2
             else:
                 self.tail.next = car
                 self.tail = self.tail.next
