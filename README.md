@@ -10,7 +10,7 @@ run_Y.sh	# will run a Y lane simulation
 
 ### Run the following command in terminal for a different json configuration file
 
-### go the downloaded folder directory
+### go to the downloaded folder directory
 cd ~/Desktop/drivethrusim-master/
 
 ### update the raspberry pi timer, these is time drift after turning off the raspberry
