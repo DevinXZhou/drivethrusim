@@ -144,8 +144,6 @@ class Model:
         for arr in self.queues:
             for q in arr:
                 q.display_settings()
-                
-                
             
         
                 
@@ -159,7 +157,8 @@ class Model:
                         score[i] += qs[i].score
             idx = score.index(min(score))
             self.queues[0][idx].push(car)
-            self.queues[0][idx].push(Delay(-1))
+            self.queues[0][idx].push(Delay(-car.id))
+
                 
 
     def link(self): #exp, link the menu queue tail to casher queue head
@@ -171,11 +170,16 @@ class Model:
                     for j in range(0, len(self.queues[i])):
                         self.queues[i][j].qid = i
                         self.queues[i][j].nextqueue = self.queues[i+1][j]
-                        self.logger.info(self.queues[i][j].name + ' is linking to '+ self.queues[i+1][j].name)
+                        #self.logger.info(self.queues[i][j].name + ' is linking to '+ self.queues[i+1][j].name)
                 else:
                     for j in range(0, len(self.queues[i])):
                         self.queues[i][j].nextqueue = self.queues[i+1][0]
-                        self.logger.info(self.queues[i][j].name + ' is linking to ' + self.queues[i+1][0].name)
+                        #self.logger.info(self.queues[i][j].name + ' is linking to ' + self.queues[i+1][0].name)
+
+        for qs in self.queues:
+            for q in qs:
+                if q.name and q.nextqueue:
+                    self.logger.info(q.name + ' next queue is '+ q.nextqueue.name)
     
         
                         
@@ -421,7 +425,7 @@ class Scheduler: #simulation per day
             if idx < self.totalCars and tic == self.car_queue_t[idx]:
                 if display_queue:
                     self.logger.info('One car in, Now generated total of |' + str(idx+1) + '| cars')
-                self.model.push(Car(idx))
+                self.model.push(Car(idx+1))
                 idx += 1
                 printToggle = True
             

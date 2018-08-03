@@ -12,7 +12,7 @@ class TSP_CTL:
         self.LED_MAPPING = {2:2, 3:3, 4:4, 5:17, 6:27, 7:22, 8:10}
         self.GREET_MAPPING = {'A':9, 'B':11}
         self.configTSP50()
-        self.lastInt = -1
+        self.lastInt = 0
         self.GREETS = {}
         self.GREETS['A'] = GPIO.PWM(self.GREET_MAPPING['A'], 400) #200 Hz frequency to turn on GREET LED
         self.GREETS['B'] = GPIO.PWM(self.GREET_MAPPING['B'], 400)
@@ -56,9 +56,11 @@ class TSP_CTL:
         self.DETECTOR_OFF_ALL()
 
     def intToBinArr(self, n): #convert an int (8 bit int) to bits array
-        b = bin(255-n)[2:] #complement exp. '0b0000110' => '0b1111001', there are total 8 LEDs 8 bits
+        if n < 0:
+            return [0]*8
+        b = bin(255-n)[2:] #complement exp. '0b0000110' => '0b1111001', there are total 8 LEDs 8 bits, 0 is used enable GIOP, 1 was presenting on, so do complement
         while (len(b) < 8):
-            b = '0'+b
+            b = '1'+b
         arr = list(map(int, list(b)))
         arr = arr[::-1]
         return arr
@@ -66,12 +68,15 @@ class TSP_CTL:
     def update(self, n): #n is the int value represent 8 bits
         if n < 256 and n >= 0 and n != self.lastInt:
             #print('signal updated to ' + str(n))
+            lastBits = self.intToBinArr(self.lastInt)
             self.lastInt = n
             self.LED_flags = self.intToBinArr(n)
+       
             for i in range(8):
                 if self.interface:
                     if i in self.interface:
-                        self.LED_CTL(self.interface[i], self.LED_flags[i]) #input a char either 0 to 7 or A or B
+                        if self.LED_flags[i] != lastBits[i]:
+                            self.LED_CTL(self.interface[i], self.LED_flags[i]) #input a char either 0 to 7 or A or B
                 else:
                     if i+1 in self.LED_MAPPING:
                         GPIO.output(self.LED_MAPPING[i+1], self.LED_flags[i]) # # in GIOP 0 is on
@@ -100,7 +105,7 @@ def main():
     ctl_model = TSP_CTL()  
     #ctl_model.update(9)
     #ctl_model.GREET_ON('A')
-    print('cleared GIOP and TSP50')
+    print('cleaned GIOP and TSP50')
     
 
 # test

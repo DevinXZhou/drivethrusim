@@ -10,7 +10,7 @@ class Car:  #linked list node
         self.timer = 0 # time to transit to another queue
         self.next = None
         self.total_wait = 0
-
+        
 class Delay:  #linked list node
     def __init__(self, ID):
         self.id = ID
@@ -42,6 +42,7 @@ class Queue:
         self.score = 0 # priority score that new car should come in this queue
                         # the lower the better
                         # later on, wait time would involve calculation
+
         self.wait_avg = None
         self.wait_dev = None
         
@@ -57,20 +58,29 @@ class Queue:
         
 
     def examine(self): #examine the queue and update what to do when car timer is 0
-        if self.head and self.nextqueue:
-            if self.nextqueue.n < self.nextqueue.maxsize:
-                self.nextqueue.push(self.head)
-                self.pop()
+        if self.head:
+            if self.head.id > 0:
+                if self.nextqueue:
+                    if self.nextqueue.n < self.nextqueue.maxsize:
+                        self.nextqueue.push(self.head)
+                        self.pop()
+                    else:
+                        self.head.timer += 1
+                        
+                else: #no next queues, so pop out without consequences
+                    self.pop()
             else:
-                self.head.timer += 1
-                    
-        else: #no next queues, so pop out without consequences
-            self.pop()
+                if self.nextqueue:
+                    self.nextqueue.push(self.head)
+                    self.pop()
+                else:
+                    self.pop()
+
 
     def pop(self):
         if self.head: #extra step to check if queue has at least one car
 
-            if self.head.id != -1:
+            if self.head.id > 0:
                 self.n -= 1
                 self.score -= 1
                 
@@ -78,40 +88,52 @@ class Queue:
             self.head.next = None
             self.head = nextCar
             if self.head:
-                if self.head.id != -1:
+                if self.head.id > 0:
                     if self.rand_wait:
                         self.head.timer = self.random_wait()
                     else:
                         self.head.timer = self.wait_avg
                 else:
-                    self.head.timer = 2 # five seconds delay
+                    self.head.timer = 2 # 2 seconds delay
             else:
                 self.tail = None
 
+            #############check here if still pull in
 
                       
                 
     def push(self, car):
- 
         tmp_id = car.id
-        if self.n < self.maxsize:
+        if self.n < self.maxsize and tmp_id > 0:
             
             if self.head == None:
                 self.head = car
                 self.tail = car
-                if car.id != -1:
+
+                if tmp_id > 0:
                     if self.rand_wait:
                         self.head.timer = self.random_wait()
                     else:
                         self.head.timer = self.wait_avg
                 else:
                     self.head.timer = 2
+
             else:
                 self.tail.next = car
                 self.tail = self.tail.next
-            if tmp_id != -1:
-                self.n += 1
-                self.score += 1
+            self.n += 1
+            self.score += 1
+            
+        if tmp_id < 0:
+            if self.head == None:
+                self.head = car
+                self.tail = car
+                self.head.timer = 2
+            else:
+                self.tail.next = car
+                self.tail = self.tail.next
+
+            
             
 
     def count_down(self):
@@ -134,9 +156,9 @@ class Queue:
 
     def detect(self):
         if self.head:
-            if self.head.id == -1: #detecting a delay object
-                return 0
-            return 1 #exist a car
+            if self.head.id > 0: 
+                return 1 #exist a car
+            return 0 
         return 0
     
     def getname(self):
@@ -144,7 +166,10 @@ class Queue:
 
     def lineUp(self, var, length, fillin): #line up the int string for print out
         if var == 'N':
-            return 'N/A'
+            newstr = 'N/A'
+            while (len(newstr) < length):
+                newstr = fillin + newstr
+            return newstr
         newstr = str(var)
         assert len(newstr) <= length
         if len(newstr) < length:
@@ -171,12 +196,13 @@ class Queue:
         wait_time = 0
         total_wait_time = 'N'
         ID = 'N'
-        if self.head and self.head.id != -1:
+        if self.head:              
             wait_time = self.head.timer
             ID = self.head.id
             total_wait_time = self.head.total_wait
+
                 
-        infor = 'Queue Event Name: '+ self.lineUp(str(self.name), 10, ' ') + "| VEH: " + self.lineUp(str(self.LED), 4,' ') + ' | cars: ' + str(self.n) + ' | cur_id: '+ self.lineUp(ID, 3, ' ') + ' | waits: '+ self.lineUp(wait_time, 3, ' ') + ' | total wait: ' + self.secToMin(total_wait_time)
+        infor = 'Queue Event Name: '+ self.lineUp(str(self.name), 10, ' ') + "| VEH: " + self.lineUp(str(self.LED), 4,' ') + ' | cars: ' + str(self.n) + ' | cur_id: '+ self.lineUp(ID, 4, ' ') + ' | waits: '+ self.lineUp(wait_time, 3, ' ') + ' | total wait: ' + self.secToMin(total_wait_time)
         self.logger.info(infor)
         #print(infor)
 
