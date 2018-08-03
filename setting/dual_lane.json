@@ -1,16 +1,16 @@
 {
 	"store" : {
  		"config": "single", 
- 		"car_freq" : 50,
+ 		"car_freq" : 80,
  		"random" : "y",
  		"pullouts" : 5, 
  		"pullins" : 2
  	},
  	"detectors" : [
- 		{"LED": "2",  "wait_avg": "0:30", "wait_dev":"0:10", "qsize":6, "name":"Menu 1"},
- 		{"LED": "3" , "wait_avg": "0:30", "wait_dev":"0:10", "qsize":2, "name":"Menu 2"},
- 		{"LED": "4" , "wait_avg": "0:40", "wait_dev":"0:05", "qsize":0, "name":"Service 1"},
-		{"LED": "5" , "wait_avg": "0:40", "wait_dev":"0:05", "qsize":0, "name":"Service 2"},
+ 		{"LED": "2",  "wait_avg": "0:30", "wait_dev":"0:05", "qsize":6, "name":"Menu 1"},
+ 		{"LED": "3" , "wait_avg": "0:30", "wait_dev":"0:05", "qsize":2, "name":"Menu 2"},
+ 		{"LED": "4" , "wait_avg": "0:30", "wait_dev":"0:05", "qsize":0, "name":"Service 1"},
+		{"LED": "5" , "wait_avg": "0:30", "wait_dev":"0:05", "qsize":0, "name":"Service 2"},
  		{"LED": null, "wait_avg":   null, "wait_dev":  null, "qsize":0, "name": null},
  		{"LED": null, "wait_avg":   null, "wait_dev":  null, "qsize":0, "name": null},
 		{"LED": null, "wait_avg":   null, "wait_dev":  null, "qsize":0, "name": null},

@@ -2,7 +2,7 @@
 	"store" : {
  		"config": "y", 
  		"car_freq" : 50,
- 		"random" : "n",
+ 		"random" : "y",
  		"pullouts" : 5, 
  		"pullins" : 2
  	},

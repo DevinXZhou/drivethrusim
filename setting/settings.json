@@ -1,6 +1,6 @@
 {
 	"store" : {
- 		"config": "single", 
+ 		"config": "y", 
  		"car_freq" : 50,
  		"random" : "y",
  		"pullouts" : 5, 
