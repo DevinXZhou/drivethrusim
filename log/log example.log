@@ -1,0 +1,326 @@
+=================================== Displaying Model Setup ===================================
+Queue Event Name:    Order 1| VEH:    2 | wait_avg: 00:30 | wait_dev: 00:05 | Queue Size: 4
+Queue Event Name:    Order 2| VEH:    3 | wait_avg: 00:30 | wait_dev: 00:05 | Queue Size: 4
+Queue Event Name:  Transit 1| VEH: None | wait_avg: 00:05 | wait_dev: 00:01 | Queue Size: 1
+Queue Event Name:    Cashier| VEH:    4 | wait_avg: 00:30 | wait_dev: 00:05 | Queue Size: 3
+Queue Event Name:  Transit 2| VEH: None | wait_avg: 00:05 | wait_dev: 00:01 | Queue Size: 1
+Queue Event Name:    Present| VEH:    5 | wait_avg: 00:30 | wait_dev: 00:05 | Queue Size: 2
+Order 1 next queue is Transit 1
+Order 2 next queue is Transit 1
+Transit 1 next queue is Cashier
+Cashier next queue is Transit 2
+Transit 2 next queue is Present
+========================= New Day Schedule on 2018-08-07 Tue Created =========================
+90 Cars per Hour
+Total Simulation Time is 10.61 hours
+Store opens at 5:00
+Store closes at 23:00
+Total business hours are 9.61
+================================================================================================
+*********************************** Day 2018-08-07 13:23:07 ***********************************
+Generated 865 cars in simulation queue
+Simulation is in real time
+Signal updated to 0
+Processing Vitual Time: 13:23:07 | 48187 seconds
+Queue Event Name:    Order 1| VEH:    2 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Order 2| VEH:    3 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:  Transit 1| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Cashier| VEH:    4 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:  Transit 2| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Present| VEH:    5 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Output Bits: 00000000
+================================================================================================
+Next car is coming in 176 seconds
+One car in, Now generated total of |1| cars
+Signal updated to 1
+Processing Vitual Time: 13:24:35 | 48275 seconds
+Queue Event Name:    Order 1| VEH:    2 | cars: 1 | cur_id:     1 | waits:  34 | total wait: 00:01
+Queue Event Name:    Order 2| VEH:    3 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:  Transit 1| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Cashier| VEH:    4 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:  Transit 2| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Present| VEH:    5 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Output Bits: 10000000
+================================================================================================
+Next car is coming in 142 seconds
+Signal updated to 0
+Processing Vitual Time: 13:25:10 | 48310 seconds
+Queue Event Name:    Order 1| VEH:    2 | cars: 0 | cur_id:    -1 | waits:   2 | total wait: 00:36
+Queue Event Name:    Order 2| VEH:    3 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:  Transit 1| VEH: None | cars: 1 | cur_id:     1 | waits:   5 | total wait: 00:36
+Queue Event Name:    Cashier| VEH:    4 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:  Transit 2| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Present| VEH:    5 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Output Bits: 00000000
+================================================================================================
+Signal updated to 4
+Processing Vitual Time: 13:25:16 | 48316 seconds
+Queue Event Name:    Order 1| VEH:    2 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Order 2| VEH:    3 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:  Transit 1| VEH: None | cars: 0 | cur_id:    -1 | waits:   2 | total wait: 00:42
+Queue Event Name:    Cashier| VEH:    4 | cars: 1 | cur_id:     1 | waits:  29 | total wait: 00:42
+Queue Event Name:  Transit 2| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Present| VEH:    5 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Output Bits: 00100000
+================================================================================================
+Signal updated to 0
+Processing Vitual Time: 13:25:46 | 48346 seconds
+Queue Event Name:    Order 1| VEH:    2 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Order 2| VEH:    3 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:  Transit 1| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Cashier| VEH:    4 | cars: 0 | cur_id:    -1 | waits:   2 | total wait: 01:12
+Queue Event Name:  Transit 2| VEH: None | cars: 1 | cur_id:     1 | waits:   4 | total wait: 01:12
+Queue Event Name:    Present| VEH:    5 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Output Bits: 00000000
+================================================================================================
+Signal updated to 8
+Processing Vitual Time: 13:25:51 | 48351 seconds
+Queue Event Name:    Order 1| VEH:    2 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Order 2| VEH:    3 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:  Transit 1| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Cashier| VEH:    4 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:  Transit 2| VEH: None | cars: 0 | cur_id:    -1 | waits:   2 | total wait: 01:17
+Queue Event Name:    Present| VEH:    5 | cars: 1 | cur_id:     1 | waits:  29 | total wait: 01:17
+Output Bits: 00010000
+================================================================================================
+One car in, Now generated total of |2| cars
+Signal updated to 10
+Processing Vitual Time: 13:26:03 | 48363 seconds
+Queue Event Name:    Order 1| VEH:    2 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Order 2| VEH:    3 | cars: 1 | cur_id:     2 | waits:  27 | total wait: 00:01
+Queue Event Name:  Transit 1| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Cashier| VEH:    4 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:  Transit 2| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Present| VEH:    5 | cars: 1 | cur_id:     1 | waits:  17 | total wait: 01:29
+Output Bits: 01010000
+================================================================================================
+Next car is coming in 70 seconds
+Signal updated to 2
+Processing Vitual Time: 13:26:21 | 48381 seconds
+Queue Event Name:    Order 1| VEH:    2 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Order 2| VEH:    3 | cars: 1 | cur_id:     2 | waits:   9 | total wait: 00:19
+Queue Event Name:  Transit 1| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Cashier| VEH:    4 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:  Transit 2| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Present| VEH:    5 | cars: 0 | cur_id:    -1 | waits:   2 | total wait: 01:47
+Output Bits: 01000000
+================================================================================================
+Signal updated to 0
+Processing Vitual Time: 13:26:31 | 48391 seconds
+Queue Event Name:    Order 1| VEH:    2 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Order 2| VEH:    3 | cars: 0 | cur_id:    -2 | waits:   2 | total wait: 00:29
+Queue Event Name:  Transit 1| VEH: None | cars: 1 | cur_id:     2 | waits:   4 | total wait: 00:29
+Queue Event Name:    Cashier| VEH:    4 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:  Transit 2| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Present| VEH:    5 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Output Bits: 00000000
+================================================================================================
+Signal updated to 4
+Processing Vitual Time: 13:26:36 | 48396 seconds
+Queue Event Name:    Order 1| VEH:    2 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Order 2| VEH:    3 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:  Transit 1| VEH: None | cars: 0 | cur_id:    -2 | waits:   2 | total wait: 00:34
+Queue Event Name:    Cashier| VEH:    4 | cars: 1 | cur_id:     2 | waits:  28 | total wait: 00:34
+Queue Event Name:  Transit 2| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Present| VEH:    5 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Output Bits: 00100000
+================================================================================================
+One car in, Now generated total of |3| cars
+Signal updated to 6
+Processing Vitual Time: 13:26:57 | 48417 seconds
+Queue Event Name:    Order 1| VEH:    2 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Order 2| VEH:    3 | cars: 1 | cur_id:     3 | waits:  34 | total wait: 00:01
+Queue Event Name:  Transit 1| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Cashier| VEH:    4 | cars: 1 | cur_id:     2 | waits:   7 | total wait: 00:55
+Queue Event Name:  Transit 2| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Present| VEH:    5 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Output Bits: 01100000
+================================================================================================
+Next car is coming in 63 seconds
+Signal updated to 2
+Processing Vitual Time: 13:27:05 | 48425 seconds
+Queue Event Name:    Order 1| VEH:    2 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Order 2| VEH:    3 | cars: 1 | cur_id:     3 | waits:  26 | total wait: 00:09
+Queue Event Name:  Transit 1| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Cashier| VEH:    4 | cars: 0 | cur_id:    -2 | waits:   2 | total wait: 01:03
+Queue Event Name:  Transit 2| VEH: None | cars: 1 | cur_id:     2 | waits:   2 | total wait: 01:03
+Queue Event Name:    Present| VEH:    5 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Output Bits: 01000000
+================================================================================================
+Signal updated to 10
+Processing Vitual Time: 13:27:08 | 48428 seconds
+Queue Event Name:    Order 1| VEH:    2 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Order 2| VEH:    3 | cars: 1 | cur_id:     3 | waits:  23 | total wait: 00:12
+Queue Event Name:  Transit 1| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Cashier| VEH:    4 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:  Transit 2| VEH: None | cars: 0 | cur_id:    -2 | waits:   2 | total wait: 01:06
+Queue Event Name:    Present| VEH:    5 | cars: 1 | cur_id:     2 | waits:  29 | total wait: 01:06
+Output Bits: 01010000
+================================================================================================
+One car in, Now generated total of |4| cars
+Signal updated to 11
+Processing Vitual Time: 13:27:13 | 48433 seconds
+Queue Event Name:    Order 1| VEH:    2 | cars: 1 | cur_id:     4 | waits:  37 | total wait: 00:01
+Queue Event Name:    Order 2| VEH:    3 | cars: 1 | cur_id:     3 | waits:  18 | total wait: 00:17
+Queue Event Name:  Transit 1| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Cashier| VEH:    4 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:  Transit 2| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Present| VEH:    5 | cars: 1 | cur_id:     2 | waits:  24 | total wait: 01:11
+Output Bits: 11010000
+================================================================================================
+Next car is coming in 71 seconds
+Signal updated to 9
+Processing Vitual Time: 13:27:32 | 48452 seconds
+Queue Event Name:    Order 1| VEH:    2 | cars: 1 | cur_id:     4 | waits:  18 | total wait: 00:20
+Queue Event Name:    Order 2| VEH:    3 | cars: 0 | cur_id:    -3 | waits:   2 | total wait: 00:36
+Queue Event Name:  Transit 1| VEH: None | cars: 1 | cur_id:     3 | waits:   3 | total wait: 00:36
+Queue Event Name:    Cashier| VEH:    4 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:  Transit 2| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Present| VEH:    5 | cars: 1 | cur_id:     2 | waits:   5 | total wait: 01:30
+Output Bits: 10010000
+================================================================================================
+Signal updated to 13
+Processing Vitual Time: 13:27:36 | 48456 seconds
+Queue Event Name:    Order 1| VEH:    2 | cars: 1 | cur_id:     4 | waits:  14 | total wait: 00:24
+Queue Event Name:    Order 2| VEH:    3 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:  Transit 1| VEH: None | cars: 0 | cur_id:    -3 | waits:   2 | total wait: 00:40
+Queue Event Name:    Cashier| VEH:    4 | cars: 1 | cur_id:     3 | waits:  35 | total wait: 00:40
+Queue Event Name:  Transit 2| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Present| VEH:    5 | cars: 1 | cur_id:     2 | waits:   1 | total wait: 01:34
+Output Bits: 10110000
+================================================================================================
+Signal updated to 5
+Processing Vitual Time: 13:27:38 | 48458 seconds
+Queue Event Name:    Order 1| VEH:    2 | cars: 1 | cur_id:     4 | waits:  12 | total wait: 00:26
+Queue Event Name:    Order 2| VEH:    3 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:  Transit 1| VEH: None | cars: 0 | cur_id:    -3 | waits:   0 | total wait: 00:42
+Queue Event Name:    Cashier| VEH:    4 | cars: 1 | cur_id:     3 | waits:  33 | total wait: 00:42
+Queue Event Name:  Transit 2| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Present| VEH:    5 | cars: 0 | cur_id:    -2 | waits:   2 | total wait: 01:36
+Output Bits: 10100000
+================================================================================================
+Signal updated to 4
+Processing Vitual Time: 13:27:51 | 48471 seconds
+Queue Event Name:    Order 1| VEH:    2 | cars: 0 | cur_id:    -4 | waits:   2 | total wait: 00:39
+Queue Event Name:    Order 2| VEH:    3 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:  Transit 1| VEH: None | cars: 1 | cur_id:     4 | waits:   5 | total wait: 00:39
+Queue Event Name:    Cashier| VEH:    4 | cars: 1 | cur_id:     3 | waits:  20 | total wait: 00:55
+Queue Event Name:  Transit 2| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Present| VEH:    5 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Output Bits: 00100000
+================================================================================================
+One car in, Now generated total of |5| cars
+Signal updated to 6
+Processing Vitual Time: 13:28:00 | 48480 seconds
+Queue Event Name:    Order 1| VEH:    2 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Order 2| VEH:    3 | cars: 1 | cur_id:     5 | waits:  37 | total wait: 00:01
+Queue Event Name:  Transit 1| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Cashier| VEH:    4 | cars: 2 | cur_id:     3 | waits:  11 | total wait: 01:04
+Queue Event Name:  Transit 2| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Present| VEH:    5 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Output Bits: 01100000
+================================================================================================
+Next car is coming in 31 seconds
+Signal updated to 2
+Processing Vitual Time: 13:28:12 | 48492 seconds
+Queue Event Name:    Order 1| VEH:    2 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Order 2| VEH:    3 | cars: 1 | cur_id:     5 | waits:  25 | total wait: 00:13
+Queue Event Name:  Transit 1| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Cashier| VEH:    4 | cars: 1 | cur_id:    -3 | waits:   2 | total wait: 01:16
+Queue Event Name:  Transit 2| VEH: None | cars: 1 | cur_id:     3 | waits:   4 | total wait: 01:16
+Queue Event Name:    Present| VEH:    5 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Output Bits: 01000000
+================================================================================================
+Signal updated to 6
+Processing Vitual Time: 13:28:15 | 48495 seconds
+Queue Event Name:    Order 1| VEH:    2 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Order 2| VEH:    3 | cars: 1 | cur_id:     5 | waits:  22 | total wait: 00:16
+Queue Event Name:  Transit 1| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Cashier| VEH:    4 | cars: 1 | cur_id:     4 | waits:  30 | total wait: 01:03
+Queue Event Name:  Transit 2| VEH: None | cars: 1 | cur_id:     3 | waits:   1 | total wait: 01:19
+Queue Event Name:    Present| VEH:    5 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Output Bits: 01100000
+================================================================================================
+Signal updated to 14
+Processing Vitual Time: 13:28:17 | 48497 seconds
+Queue Event Name:    Order 1| VEH:    2 | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Order 2| VEH:    3 | cars: 1 | cur_id:     5 | waits:  20 | total wait: 00:18
+Queue Event Name:  Transit 1| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Cashier| VEH:    4 | cars: 1 | cur_id:     4 | waits:  28 | total wait: 01:05
+Queue Event Name:  Transit 2| VEH: None | cars: 0 | cur_id:    -3 | waits:   2 | total wait: 01:21
+Queue Event Name:    Present| VEH:    5 | cars: 1 | cur_id:     3 | waits:  30 | total wait: 01:21
+Output Bits: 01110000
+================================================================================================
+One car in, Now generated total of |6| cars
+Next car is coming in 119 seconds
+One car in, Now generated total of |7| cars
+Signal updated to 15
+Processing Vitual Time: 13:28:31 | 48511 seconds
+Queue Event Name:    Order 1| VEH:    2 | cars: 1 | cur_id:     7 | waits:  22 | total wait: 00:01
+Queue Event Name:    Order 2| VEH:    3 | cars: 2 | cur_id:     5 | waits:   6 | total wait: 00:32
+Queue Event Name:  Transit 1| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Cashier| VEH:    4 | cars: 1 | cur_id:     4 | waits:  14 | total wait: 01:19
+Queue Event Name:  Transit 2| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Present| VEH:    5 | cars: 1 | cur_id:     3 | waits:  16 | total wait: 01:35
+Output Bits: 11110000
+================================================================================================
+Next car is coming in 116 seconds
+Signal updated to 13
+Processing Vitual Time: 13:28:38 | 48518 seconds
+Queue Event Name:    Order 1| VEH:    2 | cars: 1 | cur_id:     7 | waits:  15 | total wait: 00:08
+Queue Event Name:    Order 2| VEH:    3 | cars: 1 | cur_id:    -5 | waits:   2 | total wait: 00:39
+Queue Event Name:  Transit 1| VEH: None | cars: 1 | cur_id:     5 | waits:   4 | total wait: 00:39
+Queue Event Name:    Cashier| VEH:    4 | cars: 1 | cur_id:     4 | waits:   7 | total wait: 01:26
+Queue Event Name:  Transit 2| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Present| VEH:    5 | cars: 1 | cur_id:     3 | waits:   9 | total wait: 01:42
+Output Bits: 10110000
+================================================================================================
+Signal updated to 15
+Processing Vitual Time: 13:28:41 | 48521 seconds
+Queue Event Name:    Order 1| VEH:    2 | cars: 1 | cur_id:     7 | waits:  12 | total wait: 00:11
+Queue Event Name:    Order 2| VEH:    3 | cars: 1 | cur_id:     6 | waits:  28 | total wait: 00:18
+Queue Event Name:  Transit 1| VEH: None | cars: 1 | cur_id:     5 | waits:   1 | total wait: 00:42
+Queue Event Name:    Cashier| VEH:    4 | cars: 1 | cur_id:     4 | waits:   4 | total wait: 01:29
+Queue Event Name:  Transit 2| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Present| VEH:    5 | cars: 1 | cur_id:     3 | waits:   6 | total wait: 01:45
+Output Bits: 11110000
+================================================================================================
+Signal updated to 11
+Processing Vitual Time: 13:28:46 | 48526 seconds
+Queue Event Name:    Order 1| VEH:    2 | cars: 1 | cur_id:     7 | waits:   7 | total wait: 00:16
+Queue Event Name:    Order 2| VEH:    3 | cars: 1 | cur_id:     6 | waits:  23 | total wait: 00:23
+Queue Event Name:  Transit 1| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Cashier| VEH:    4 | cars: 1 | cur_id:    -4 | waits:   2 | total wait: 01:34
+Queue Event Name:  Transit 2| VEH: None | cars: 1 | cur_id:     4 | waits:   3 | total wait: 01:34
+Queue Event Name:    Present| VEH:    5 | cars: 1 | cur_id:     3 | waits:   1 | total wait: 01:50
+Output Bits: 11010000
+================================================================================================
+Signal updated to 3
+Processing Vitual Time: 13:28:48 | 48528 seconds
+Queue Event Name:    Order 1| VEH:    2 | cars: 1 | cur_id:     7 | waits:   5 | total wait: 00:18
+Queue Event Name:    Order 2| VEH:    3 | cars: 1 | cur_id:     6 | waits:  21 | total wait: 00:25
+Queue Event Name:  Transit 1| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Cashier| VEH:    4 | cars: 1 | cur_id:    -4 | waits:   0 | total wait: 01:36
+Queue Event Name:  Transit 2| VEH: None | cars: 1 | cur_id:     4 | waits:   1 | total wait: 01:36
+Queue Event Name:    Present| VEH:    5 | cars: 0 | cur_id:    -3 | waits:   2 | total wait: 01:52
+Output Bits: 11000000
+================================================================================================
+Signal updated to 7
+Processing Vitual Time: 13:28:49 | 48529 seconds
+Queue Event Name:    Order 1| VEH:    2 | cars: 1 | cur_id:     7 | waits:   4 | total wait: 00:19
+Queue Event Name:    Order 2| VEH:    3 | cars: 1 | cur_id:     6 | waits:  20 | total wait: 00:26
+Queue Event Name:  Transit 1| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Cashier| VEH:    4 | cars: 1 | cur_id:     5 | waits:  24 | total wait: 00:50
+Queue Event Name:  Transit 2| VEH: None | cars: 1 | cur_id:     4 | waits:   0 | total wait: 01:37
+Queue Event Name:    Present| VEH:    5 | cars: 0 | cur_id:    -3 | waits:   1 | total wait: 01:53
+Output Bits: 11100000
+================================================================================================
+Signal updated to 15
+Processing Vitual Time: 13:28:51 | 48531 seconds
+Queue Event Name:    Order 1| VEH:    2 | cars: 1 | cur_id:     7 | waits:   2 | total wait: 00:21
+Queue Event Name:    Order 2| VEH:    3 | cars: 1 | cur_id:     6 | waits:  18 | total wait: 00:28
+Queue Event Name:  Transit 1| VEH: None | cars: 0 | cur_id:   N/A | waits:   0 | total wait: N/A
+Queue Event Name:    Cashier| VEH:    4 | cars: 1 | cur_id:     5 | waits:  22 | total wait: 00:52
+Queue Event Name:  Transit 2| VEH: None | cars: 0 | cur_id:    -4 | waits:   1 | total wait: 01:39
+Queue Event Name:    Present| VEH:    5 | cars: 1 | cur_id:     4 | waits:  19 | total wait: 01:39
+Output Bits: 11110000
