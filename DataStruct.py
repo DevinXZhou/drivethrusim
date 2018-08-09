@@ -42,9 +42,12 @@ class Queue:
         self.score = 0 # priority score that new car should come in this queue
                         # the lower the better
                         # later on, wait time would involve calculation
+        
 
         self.wait_avg = None
         self.wait_dev = None
+
+        self.lastCarID = 0 # used to identify multiple delay objects
         
         if isinstance(wait_avg, int):
             self.wait_avg = wait_avg
@@ -65,21 +68,20 @@ class Queue:
                         self.nextqueue.push(self.head)
                         self.pop()
                     else:
-                        self.head.timer += 1
-                        
+                        self.head.timer += 1                  
                 else: #no next queues, so pop out without consequences
                     self.pop()
             else:
-                if self.nextqueue:
-                    self.nextqueue.push(self.head)
-                    self.pop()
-                else:
-                    self.pop()
+                if self.nextqueue:       
+                    if self.lastCarID > 0:
+                        self.nextqueue.push(self.head)
+                self.pop()
 
 
     def pop(self):
         if self.head: #extra step to check if queue has at least one car
-
+            self.lastCarID = self.head.id
+            
             if self.head.id > 0:
                 self.n -= 1
                 self.score -= 1
@@ -133,8 +135,6 @@ class Queue:
                 self.tail.next = car
                 self.tail = self.tail.next
 
-            
-            
 
     def count_down(self):
         if self.head:
@@ -202,7 +202,7 @@ class Queue:
             total_wait_time = self.head.total_wait
 
                 
-        infor = 'Queue Event Name: '+ self.lineUp(str(self.name), 10, ' ') + "| VEH: " + self.lineUp(str(self.LED), 4,' ') + ' | cars: ' + str(self.n) + ' | cur_id: '+ self.lineUp(ID, 4, ' ') + ' | waits: '+ self.lineUp(wait_time, 3, ' ') + ' | total wait: ' + self.secToMin(total_wait_time)
+        infor = 'Queue Event Name: '+ self.lineUp(str(self.name), 10, ' ') + "| VEH: " + self.lineUp(str(self.LED), 4,' ') + ' | cars: ' + str(self.n) + ' | cur_id: '+ self.lineUp(ID, 5, ' ') + ' | waits: '+ self.lineUp(wait_time, 3, ' ') + ' | total wait: ' + self.secToMin(total_wait_time)
         self.logger.info(infor)
         #print(infor)
 

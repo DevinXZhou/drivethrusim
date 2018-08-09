@@ -1,5 +1,6 @@
 import sys
 import random
+from random import randint
 import time
 import datetime
 import numpy as np
@@ -17,12 +18,6 @@ from Logger import Logger
 ## CASH2 = BCM 17 = Detector 5
 ## PRESENT1 = BCM 27 = Detector 6
 ## PRESENT2 = BCM 22 = Detector 7
-
-#QType_Param is a dictionary to specify queue properties
-            #[LED index, wait average time, wait deviation, max queue size]
-QType_Param = {'MENU0':[1, 30, 10, 5], 'MENU1':[2, 30, 12, 5], 'CASH0':[3, 15, 5, 4], 'CASH1':[4, 20, 5, 4],
-             'PRESENT0':[5, 15, 7, 2], 'PRESENT1':[6, 20, 8, 2], 'TRANSIT':[-1, 5, 1, 2]}
-
 
 
     
@@ -51,48 +46,11 @@ class Model:
         self.outInt = -1 #used to track if output intger is changed
         self.outBits = [] #output bits converted from output intger, 8 bits
         self.queues = [] #store each constructed queue in here
+        
 
-        if arch:
-            for i, n in enumerate(arch): #translate arch into architect, add transition queues between each queue
-                if n != 0:
-                    self.architect.append([i+1]*n)
-                    if i < len(arch)-1:
-                        self.architect.append([0]*n) #adding transition queues between other queues
-                        
-            self.construct() #construct queues from translated "architect"
-            
-        else:
-            self.set_up(setting)
+        self.set_up(setting)
 
         self.link() #link one queue tail to another queue's head
-        #self.logger = logging.getLogger('Model')
-        #logging.basicConfig(level=logging.DEBUG,
-                    #format='%(asctime)s %(levelname)s %(message)s',
-                    #filename='./log/example.log',
-                    #filemode='w')
-        
-            
-
-    ######################### Depreciated #########################
-    def construct(self): #build queue based on types, mean random wait time of the window (menu or casher)
-                         #add transition queue between two queues
-        i = 0 # skip transit
-        for k, lanes in enumerate(self.architect):
-            arr = []
-            for j, qtype in enumerate(lanes):
-                if qtype == 0:
-                    name = 'TRANSIT'
-                    arr.append(Queue(QType(qtype), QType_Param[name][1],
-                                     QType_Param[name][2], QType_Param[name][3], j))
-                else:
-                    name = str(QType(qtype))[6:] + str(j)
-                    arr.append(Queue(QType(qtype),  QType_Param[name][1],
-                                     QType_Param[name][2], QType_Param[name][3], j))
-            self.queues.append(arr)
-            if k%2 == 1:
-                i += 1
-    ###############################################################
-                
 
     def set_up(self, setting): #parse setup file and construct queues
         
@@ -111,28 +69,48 @@ class Model:
                 if not queues_parallel: #empty
                     queues_parallel.append(q)
                 else:
+                    if len(q.name) < 4:
+                        self.errorLogger.error('Event name should be more than 4 chars, in order to compare them if they are the same event')
                     assert len(q.name) >= 4
                     if q.name[0:4] == queues_parallel[0].name[0:4]: #check if they are same type of windows by checking name
                         queues_parallel.append(q)
                     else:
                         self.queues.append(queues_parallel)
-                        transit_parallel = []
-                        for i in range(len(queues_parallel)):
-                            transit_queue = Queue(self.Transit_Param[0], self.Transit_Param[1], self.Transit_Param[2], 'Transit '+str(transit_number)) #3 seconds average, 1 second dev, queue size 1
-                            transit_number += 1
-                            transit_parallel.append(transit_queue)
-                        self.queues.append(transit_parallel)
                         queues_parallel = [q]
-
+        
         if queues_parallel:
             self.queues.append(queues_parallel)
+
+        # set up the transition queues
+        
+        new_queues = []
+        for idx, qs in enumerate(self.queues[:-1]):
+            transit_parallel = []
+            new_queues.append(qs)
+            
+            if len(self.queues[idx+1]) == 1:
+                transit_queue = Queue(self.Transit_Param[0], self.Transit_Param[1], self.Transit_Param[2], 'Transit '+str(transit_number)) #3 seconds average, 1 second dev, queue size 1
+                transit_number += 1
+                transit_parallel = [transit_queue]
+            else:
+                for i in range(len(qs)):
+                    transit_queue = Queue(self.Transit_Param[0], self.Transit_Param[1], self.Transit_Param[2], 'Transit '+str(transit_number)) #3 seconds average, 1 second dev, queue size 1
+                    transit_number += 1
+                    transit_parallel.append(transit_queue)
+            new_queues.append(transit_parallel)
+        new_queues.append(self.queues[-1])
+        self.queues = new_queues
+            
 
         # fix the max queue size due to different implementation
         idx = len(self.queues)-1
         while(idx >= 0):
             if idx - 2 >= 0:
                 for i, q in enumerate(self.queues[idx]): # assume the number of next queues is always smaller or equal, which is true in drive through
-                    q.maxsize = self.queues[idx - 2][i].maxsize
+                    q.maxsize = self.queues[idx - 2][i].maxsize - 1
+                    if q.maxsize < 1:
+                        self.errorLogger.error('Invalid queue size setup on ' + q.name + ', which the size should be larger than 1. ')
+                        assert q.maxsize < 1    
             idx -= 2
 
         if self.queues[0]:
@@ -155,7 +133,11 @@ class Model:
                 for i in range(len(score)):
                     if i < len(qs):
                         score[i] += qs[i].score
-            idx = score.index(min(score))
+            idx = 0
+            if len(score) > 1 and score[0] == score[1]:
+                idx = randint(0, len(score)-1)
+            else:               
+                idx = score.index(min(score))
             self.queues[0][idx].push(car)
             self.queues[0][idx].push(Delay(-car.id))
 
