@@ -7,9 +7,9 @@
  		"pullins" : 2
  	},
  	"detectors" : [
- 		{"LED": "2",  "wait_avg": "0:30", "wait_dev":"0:10", "qsize":3, "name":"Order 1"},
-		{"LED": "A" , "wait_avg": "0:30", "wait_dev":"0:07", "qsize":0, "name":"Greet 1"},
-		{"LED": "3" , "wait_avg": "0:30", "wait_dev":"0:07", "qsize":2, "name":"Cashier"},
+ 		{"LED": "2",  "wait_avg": "0:30", "wait_dev":"0:05", "qsize":3, "name":"Order 1"},
+		{"LED": "A" , "wait_avg": "0:30", "wait_dev":"0:05", "qsize":0, "name":"Greet 1"},
+		{"LED": "3" , "wait_avg": "0:30", "wait_dev":"0:05", "qsize":2, "name":"Cashier"},
  		{"LED": "4" , "wait_avg": "0:30", "wait_dev":"0:05", "qsize":0, "name":"Present"},
  		{"LED": null, "wait_avg":   null, "wait_dev":  null, "qsize":0, "name":     null},
  		{"LED": null, "wait_avg":   null, "wait_dev":  null, "qsize":0, "name":     null},
